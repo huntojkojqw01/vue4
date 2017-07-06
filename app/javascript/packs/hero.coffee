@@ -9,3 +9,15 @@ new Vue
 	data: {
 		message: "You loaded this page on"+new Date()
 	}
+new Vue
+	el: '#hero-2'
+	data:
+		seen: true
+new Vue
+	el: "#hero-3"
+	data:
+		texts:[
+			{content: "Nguyen"},
+			{content: "Dinh"},
+			{content: "Hung"}
+		]

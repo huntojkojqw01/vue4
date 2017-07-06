@@ -7,4 +7,16 @@
 		di chuot qua la thay tieu de hien len
 	</span>
 </div>
+<div id="hero-2">
+	<p v-if="seen">
+		Now you see me
+	</p>
+</div>
+<div id="hero-3">
+	<ul>
+		<li v-for="text in texts">
+			{{text.content}}
+		</li>
+	</ul>
+</div>
 <%=javascript_pack_tag "hero"%>
