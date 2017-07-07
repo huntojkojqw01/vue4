@@ -47,4 +47,22 @@ new Vue
 			{ten: "Trang",tuoi: 22},
 			{ten: "Hang",tuoi: 23}
 		]
+new Vue
+	el: "#hero-7"
+	data:
+		message: "Nguyen Dinh Hung"
+	computed:
+		reverseMess: ()->
+			this.message.split('').reverse().join('')
+new Vue
+	el: "#hero-8"
+	data:
+		firstname: "Hero"
+		lastname: "Nguyen"
+		fullname: "init nothing"
+	watch:
+		firstname: (val)->
+			this.fullname=val+' '+this.lastname
+		lastname: (val)->
+			this.fullname=this.firstname+' '+val
 		

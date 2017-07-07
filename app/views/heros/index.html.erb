@@ -32,4 +32,13 @@
 		<nguoi v-for="nguoi in danhsachs" :ten="nguoi.ten" :tuoi="nguoi.tuoi"></nguoi>
 	</ul>
 </div>
+<div id="hero-7">
+	<p>Xau goc: {{message}}</p>
+	<p>Xau dao nguoc: {{reverseMess}}</p>
+</div>
+<div id="hero-8">
+	First name: <input v-model="firstname">
+	Last name: <input v-model="lastname">
+	<p>Fullname: {{fullname}}</p>
+</div>
 <%=javascript_pack_tag "hero"%>
