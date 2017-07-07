@@ -21,3 +21,15 @@ new Vue
 			{content: "Dinh"},
 			{content: "Hung"}
 		]
+new Vue
+	el: "#hero-4"
+	data:
+		message: "Ahihi"
+		title: "Bam vao nut nay la doan text tren se bi dao nguoc"
+	methods:
+		reverseMess: ()->
+			this.message=this.message.split('').reverse().join('')
+new Vue
+	el: "#hero-5"
+	data:
+		message: "Noi dung intput"
