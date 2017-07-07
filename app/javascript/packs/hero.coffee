@@ -33,3 +33,18 @@ new Vue
 	el: "#hero-5"
 	data:
 		message: "Noi dung intput"
+Vue.component('nguoi',{
+	props: ['ten','tuoi']
+	template: '<li>{{ten}}, {{tuoi}}</li>'	
+	})
+new Vue
+	el: "#hero-6"
+	components: ['nguoi']
+	data:
+		danhsachs:[
+			{ten: "Hung",tuoi: 30},
+			{ten: "Han",tuoi: 27},
+			{ten: "Trang",tuoi: 22},
+			{ten: "Hang",tuoi: 23}
+		]
+		

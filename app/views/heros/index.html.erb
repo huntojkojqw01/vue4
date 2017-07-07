@@ -25,6 +25,11 @@
 </div>
 <div id="hero-5">
 	<p>{{message}}</p>
-	<input type="text" v-model="message">
+	<input type="text" v-model="message">	
+</div>
+<div id="hero-6">
+	<ul>
+		<nguoi v-for="nguoi in danhsachs" :ten="nguoi.ten" :tuoi="nguoi.tuoi"></nguoi>
+	</ul>
 </div>
 <%=javascript_pack_tag "hero"%>
