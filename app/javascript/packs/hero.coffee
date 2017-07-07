@@ -35,17 +35,17 @@ new Vue
 		message: "Noi dung intput"
 Vue.component('nguoi',{
 	props: ['ten','tuoi']
-	template: '<li>{{ten}}, {{tuoi}}</li>'	
+	template: "<li>{{ten}}, {{tuoi}}</li>"	
 	})
 new Vue
 	el: "#hero-6"
 	components: ['nguoi']
 	data:
 		danhsachs:[
-			{ten: "Hung",tuoi: 30},
-			{ten: "Han",tuoi: 27},
-			{ten: "Trang",tuoi: 22},
-			{ten: "Hang",tuoi: 23}
+			{id: 1,ten: "Hung",tuoi: 30},
+			{id: 2,ten: "Han",tuoi: 27},
+			{id: 3,ten: "Trang",tuoi: 22},
+			{id: 4,ten: "Hang",tuoi: 23}
 		]
 new Vue
 	el: "#hero-7"
@@ -65,4 +65,9 @@ new Vue
 			this.fullname=val+' '+this.lastname
 		lastname: (val)->
 			this.fullname=this.firstname+' '+val
-		
+new Vue
+	el: "#hero-9"
+	data:
+		name: "Nguyen Dinh Hung"
+		classO: "class_name"
+		styleO: "font-size: 2em;text-align: center;color: red"		

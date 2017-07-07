@@ -29,7 +29,7 @@
 </div>
 <div id="hero-6">
 	<ul>
-		<nguoi v-for="nguoi in danhsachs" :ten="nguoi.ten" :tuoi="nguoi.tuoi"></nguoi>
+		<nguoi v-for="nguoi in danhsachs" :ten="nguoi.ten" :tuoi="nguoi.tuoi" :key="nguoi.ten"></nguoi>
 	</ul>
 </div>
 <div id="hero-7">
@@ -40,5 +40,8 @@
 	First name: <input v-model="firstname">
 	Last name: <input v-model="lastname">
 	<p>Fullname: {{fullname}}</p>
+</div>
+<div id="hero-9" :class="classO" :style="styleO">
+	{{name}}
 </div>
 <%=javascript_pack_tag "hero"%>
