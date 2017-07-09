@@ -70,4 +70,20 @@ new Vue
 	data:
 		name: "Nguyen Dinh Hung"
 		classO: "class_name"
-		styleO: "font-size: 2em;text-align: center;color: red"		
+		styleO: "font-size: 2em;text-align: center;color: red"
+Vue.component('anchored-heading', {  
+  render: (createElement) -># template: '#anchored-heading-template',
+    return createElement(
+      'h' + this.level,
+      this.$slots.default
+    )
+  props: {
+    level: {
+      type: Number,
+      required: true
+    }
+  }
+})
+new Vue
+	el: "#hero-10"
+	components: 'anchored-heading'	
