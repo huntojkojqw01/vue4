@@ -20,15 +20,15 @@
 </div> -->
 <div id="app">
   <h1>Hello App!</h1>
-  <p>
-    <!-- use router-link component for navigation. -->
-    <!-- specify the link by passing the `to` prop. -->
-    <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+  <p>    
     <router-link to="/foo">Go to Foo</router-link>
     <router-link to="/bar">Go to Bar</router-link>
-  </p>
-  <!-- route outlet -->
-  <!-- component matched by the route will render here -->
+    <router-link to="/user/1">Go to User</router-link>
+    <router-link to="/user/1/profile">Go to Profile</router-link>
+    <router-link to="/user/1/post">Go to Post</router-link>
+    <button @click="$router.push({path: '/user/2/post'})">Go to Post</button>
+  </p>  
   <router-view></router-view>
 </div>
 <%=javascript_pack_tag "user"%>
+<%=stylesheet_pack_tag "user"%>

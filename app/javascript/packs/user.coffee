@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.esm'
 import VueRouter from 'vue-router/dist/vue-router.esm'
 Vue.use(VueRouter)
+
 # new Vue
 # 	name: "users"
 # 	el: "#users"	
@@ -16,12 +17,40 @@ Vue.use(VueRouter)
 # 				this.users.push({name: x,email: x+"@gmail.com",admin: true})
 # 			else
 # 				this.users.pop()
-Foo = { template: '<div>foo</div>' }
-Bar = { template: '<div>bar</div>' }
-
+Foo = { template: '<div>this is foo</div>' }
+import Bar from './bar.vue'
+User = {
+  template: '
+    <div class="user">
+      <h2>User {{ $route.params.id }}</h2>
+      <router-view></router-view>
+    </div>
+  '
+}
+UserProfile= {template: '<div>user profile</div>'}
+UserPost= {template: '<div>user post</div>'}
+UserHome= {template: '<div>user home</div>'}
 routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+	{ path: '/foo', component: Foo },
+	{ path: '/bar', component: Bar },
+	{ 
+		path: '/user/:id',
+		component: User,
+		children: [
+			{
+				path: 'profile',
+				component: UserProfile
+			},
+			{
+				path: 'post',
+				component: UserPost
+			},
+			{
+				path: '',
+				component: UserHome
+			}
+		]  	
+	}
 ]
 
 router = new VueRouter({

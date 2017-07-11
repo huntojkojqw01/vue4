@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.router-link-active{
+  color: red;
+}
