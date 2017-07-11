@@ -1,4 +1,4 @@
-<div id="users">
+<!-- <div id="users">
 	<h1>User list</h1>
 		<table>
 			<thead>
@@ -17,7 +17,18 @@
 			</tbody>
 		</table>
 		<button @click="change">Change</button>	
+</div> -->
+<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <!-- use router-link component for navigation. -->
+    <!-- specify the link by passing the `to` prop. -->
+    <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+    <router-link to="/foo">Go to Foo</router-link>
+    <router-link to="/bar">Go to Bar</router-link>
+  </p>
+  <!-- route outlet -->
+  <!-- component matched by the route will render here -->
+  <router-view></router-view>
 </div>
-
 <%=javascript_pack_tag "user"%>
-<%=stylesheet_pack_tag "user"%>
