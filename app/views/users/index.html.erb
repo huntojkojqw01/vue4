@@ -1,0 +1,23 @@
+<div id="users">
+	<h1>User list</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Admin?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="user in users">
+					<td>{{user.name}}</td>
+					<td>{{user.email}}</td>
+					<td>{{user.admin}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<button @click="change">Change</button>	
+</div>
+
+<%=javascript_pack_tag "user"%>
+<%=stylesheet_pack_tag "user"%>

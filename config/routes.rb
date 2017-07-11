@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root "heros#index"
+	get "/vue_test",to: "heros#index"
+  root "users#index"
+  resources :users, only: :index
 end
