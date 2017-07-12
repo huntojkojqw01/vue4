@@ -18,6 +18,8 @@ Vue.use(VueRouter)
 # 			else
 # 				this.users.pop()
 Foo = { template: '<div>this is foo</div>' }
+FooA = { template: '<div>this is fooA</div>' }
+FooB = { template: '<div>this is fooB</div>' }
 import Bar from './bar.vue'
 User = {
   template: '
@@ -31,7 +33,7 @@ UserProfile= {template: '<div>user profile</div>'}
 UserPost= {template: '<div>user post</div>'}
 UserHome= {template: '<div>user home</div>'}
 routes = [
-	{ path: '/foo', component: Foo },
+	{ path: '/foo', components: {default:Foo,a: FooA,b: FooB }},
 	{ path: '/bar', component: Bar },
 	{ 
 		path: '/user/:id',
@@ -42,7 +44,8 @@ routes = [
 				component: UserProfile
 			},
 			{
-				path: 'post',
+				name: 'named_post',
+				path: 'post',				
 				component: UserPost
 			},
 			{

@@ -26,9 +26,11 @@
     <router-link to="/user/1">Go to User</router-link>
     <router-link to="/user/1/profile">Go to Profile</router-link>
     <router-link to="/user/1/post">Go to Post</router-link>
-    <button @click="$router.push({path: '/user/2/post'})">Go to Post</button>
+    <button @click="$router.push({name: 'named_post',params: {id: 5}})">Go to Post</button>
   </p>  
   <router-view></router-view>
+  <router-view name="a"></router-view>
+  <router-view name="b"></router-view>
 </div>
 <%=javascript_pack_tag "user"%>
 <%=stylesheet_pack_tag "user"%>
