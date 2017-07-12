@@ -20,17 +20,15 @@
 </div> -->
 <div id="app">
   <h1>Hello App!</h1>
-  <p>    
-    <router-link to="/foo">Go to Foo</router-link>
-    <router-link to="/bar">Go to Bar</router-link>
-    <router-link to="/user/1">Go to User</router-link>
-    <router-link to="/user/1/profile">Go to Profile</router-link>
-    <router-link to="/user/1/post">Go to Post</router-link>
-    <button @click="$router.push({name: 'named_post',params: {id: 5}})">Go to Post</button>
-  	<router-link to="/a">A redirect Foo</router-link>
-    <router-link to="/b">B</router-link>
-    <router-link to="/l">L alias B</router-link>
-  </p>  
+  <ul>    
+    <li><router-link to="/foo">Go to Foo</router-link></li>
+    <li><router-link to="/bar">Go to Bar</router-link></li>
+    <li><router-link to="/user/1">Go to User 1</router-link></li>  
+    <button @click="$router.push({name: 'named_post',params: {id: 5}})">Go to User 5</button>
+  	<li><router-link to="/a">A redirect Foo</router-link></li>
+    <li><router-link to="/b">B</router-link></li>
+    <li><router-link to="/l">L alias B</router-link></li>
+  </ul>  
   <router-view></router-view>
   <router-view name="a"></router-view>
   <router-view name="b"></router-view>

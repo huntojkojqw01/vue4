@@ -24,15 +24,21 @@ A = { template: '<div>redirect A</div>' }
 B = { template: '<div>redirect B</div>' }
 import Bar from './bar.vue'
 User = {
-  template: '
-    <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
-      <router-view></router-view>
-    </div>
-  '
+	props: ['id'],
+	template: '<div class="user">
+		<h2>User {{ id }}</h2>
+		<router-link :to="{name: \'named_profile\',params: {id: id}}">profile</router-link>
+		<router-link :to="{name: \'named_post\',params: {id: id}}">posts</router-link>
+		<router-view></router-view></div>'
 }
-UserProfile= {template: '<div>user profile</div>'}
-UserPost= {template: '<div>user post</div>'}
+UserProfile= {
+	props: ['id'],
+	template: '<div>user profile of user_{{id}}</div>'
+}
+UserPost= {
+	props: ['id'],
+	template: '<div>user post of user_{{id}}</div>'
+}
 UserHome= {template: '<div>user home</div>'}
 routes = [
 	{ path: '/foo', components: {default:Foo,a: FooA,b: FooB }},
@@ -40,15 +46,19 @@ routes = [
 	{ 
 		path: '/user/:id',
 		component: User,
+		props: true,
 		children: [
 			{
+				name: 'named_profile'
 				path: 'profile',
-				component: UserProfile
+				component: UserProfile,
+				props: true
 			},
 			{
 				name: 'named_post',
 				path: 'post',				
-				component: UserPost
+				component: UserPost,
+				props: true
 			},
 			{
 				path: '',
