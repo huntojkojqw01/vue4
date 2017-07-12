@@ -20,6 +20,8 @@ Vue.use(VueRouter)
 Foo = { template: '<div>this is foo</div>' }
 FooA = { template: '<div>this is fooA</div>' }
 FooB = { template: '<div>this is fooB</div>' }
+A = { template: '<div>redirect A</div>' }
+B = { template: '<div>redirect B</div>' }
 import Bar from './bar.vue'
 User = {
   template: '
@@ -53,7 +55,9 @@ routes = [
 				component: UserHome
 			}
 		]  	
-	}
+	},
+	{ path: '/a',component: A,redirect: '/foo'},
+	{ path: '/b',component: B,alias: '/l'},
 ]
 
 router = new VueRouter({
