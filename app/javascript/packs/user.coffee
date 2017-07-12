@@ -2,21 +2,22 @@ import Vue from 'vue/dist/vue.esm'
 import VueRouter from 'vue-router/dist/vue-router.esm'
 Vue.use(VueRouter)
 
-# new Vue
-# 	name: "users"
-# 	el: "#users"	
-# 	data:		
-# 		users: [
-# 			{name: "hung",email: "hung@gmail.com",admin: true},
-# 			{name: "han",email: "han@gmail.com",admin: false}
-# 		]	
-# 	methods:
-# 		change: ()->
-# 			x=Math.floor((Math.random() * 100) + 1);
-# 			if x%3!=0
-# 				this.users.push({name: x,email: x+"@gmail.com",admin: true})
-# 			else
-# 				this.users.pop()
+import axios from 'axios/dist/axios'
+new Vue
+	name: "users"
+	el: "#users"	
+	data:		
+		users: []
+		errors: []
+	created: ()->
+		that=this
+		axios.get('/users.json')
+		.then (response)->
+			that.users = response.data
+			console.log(response)
+  	.catch (e)->
+  		that.errors.push(e)
+  		console.log(e)	
 Foo = { template: '<div>this is foo</div>' }
 FooA = { template: '<div>this is fooA</div>' }
 FooB = { template: '<div>this is fooB</div>' }
